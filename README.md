@@ -1,6 +1,3 @@
 # da
-Docker applictions
+Docker os and applictions
 
-## Portainer
-
-https://www.portainer.io
