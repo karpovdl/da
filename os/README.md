@@ -1,6 +1,3 @@
 # docker.os
-Docker OS
 
-## golang
-
-## alpine
+## Alpine OS

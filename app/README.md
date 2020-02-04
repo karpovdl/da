@@ -1,7 +1,5 @@
 # docker.app
-Docker applications
+
+Applications
 
 ## Portainer
-
-[Portainer](https://www.portainer.io)
-

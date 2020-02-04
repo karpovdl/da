@@ -1,3 +1,3 @@
 # da
-Docker os and applictions
+Docker images and applictions
 
