@@ -3,4 +3,7 @@
 #alpine
 #./run.sh
 
-./builder.sh {DockerID} 3.11.3
+#$1 - docker id (mandatory parameter)
+#$2 - version alpine (mandatory parameter)
+
+#./builder.sh {DockerID} {VERSION}
