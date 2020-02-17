@@ -2,6 +2,10 @@
 
 Applications
 
+## Cadvisor
+
 ## Countly
+
+## Nginx
 
 ## Portainer
