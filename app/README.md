@@ -6,6 +6,8 @@ Applications
 
 ## Countly
 
+## Matomo
+
 ## Nginx
 
 ## Portainer

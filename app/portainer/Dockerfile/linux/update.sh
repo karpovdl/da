@@ -17,4 +17,4 @@ docker run --restart always -d \
  -v /etc/localtime:/etc/localtime:ro \
  portainer/portainer:latest
 docker rm -v -f $(docker ps -aqf "name=portainer" --filter status=exited)
-#docker rmi $(docker images -f dangling=true -q)
+docker rmi $(docker images -f dangling=true -q)

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #cadvisor
 
 docker pull google/cadvisor

@@ -1,6 +1,6 @@
+#!/bin/bash
+
 #nginx
-#docker volume create nginx_data
-#docker volume inspect nginx_data
 
 docker pull nginx
 docker stop $(docker ps -aqf "name=nginx")

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #countly-server
 docker volume create countly-server_data
 docker volume inspect countly-server_data
