@@ -6,6 +6,8 @@ Applications
 
 ## Countly
 
+## Grafana
+
 ## Matomo
 
 ## Nginx
