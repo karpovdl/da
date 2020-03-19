@@ -13,7 +13,12 @@ if [[ $file != "" ]]; then
   sudo rm -rf /usr/local/go
   sudo mv go /usr/local
   export GOROOT=/usr/local/go
-  export PATH=$GOROOT/bin:$PATH
+  echo GOROOT = "${GOROOT}"
+  export GOPATH=$HOME/go
+  echo GOPATH = "${GOPATH}"
+  export PATH="${PATH}:${GOROOT}/bin:${GOPATH}"
+  echo PATH = "${PATH}"
+
   go version
   go env
 else
