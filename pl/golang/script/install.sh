@@ -3,6 +3,6 @@
 #Install
 #./install.sh
 
-./install_go.sh go1.14.linux-amd64.tar.gz
+sudo ./install_go.sh go1.14.2.linux-amd64.tar.gz
 
-echo Success
+echo Success all
