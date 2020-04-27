@@ -6,11 +6,15 @@ Applications
 
 ## Cadvisor
 
+## Centrifugo
+
 ## Countly
 
 ## Grafana
 
 ## Matomo
+
+## Netdata
 
 ## Nginx
 

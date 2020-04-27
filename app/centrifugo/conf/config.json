@@ -1,0 +1,36 @@
+{
+    "secret": "__SECRET__",
+    "admin": true,
+    "admin_password": "__ADMIN_PASSWORD__",
+    "admin_secret": "__ADMIN_SECRET__",
+    "admin_insecure": false,
+    "api_insecure": true,
+    "client_insecure": true,
+    "debug": false,
+    "tls": true,
+    "tls_key": "certs/centrifugo.key",
+    "tls_cert": "certs/centrifugo.crt",
+    "anonymous": true,
+    "publish": true,
+    "subscribe_to_publish": true,
+    "join_leave": true,
+    "presence": true,
+    "history_size": 10,
+    "history_lifetime": 30,
+    "history_recover": true,
+    "log_file": "log/logfile",
+    "log_level": "info",
+    "prometheus": false,
+    "websocket_compression": true,
+    "namespaces": [
+    {
+      "name": "public",
+      "publish": true,
+      "anonymous": true,
+      "presence": true,
+      "history_size": 10,
+      "history_lifetime": 30,
+      "history_recover": true
+    }
+  ]
+}

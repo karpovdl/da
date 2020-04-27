@@ -3,9 +3,11 @@
 #cadvisor
 
 docker pull google/cadvisor
-docker stop $(docker ps -aqf "name=cadvisor")
-docker rename cadvisor cadvisor.$(date +'%Y%d%m_%H%M%S').bak
-sudo docker run --restart always -d \
+docker ps -aqf "name=cadvisor" | xargs -I'{}' docker stop $(docker ps -aqf "name=cadvisor")
+docker ps -aqf "name=cadvisor" | xargs -I'{}' docker network disconnect --force dp-net {}
+docker ps -aqf "name=cadvisor" | xargs -I'{}' docker rename cadvisor cadvisor.$(date +'%Y%d%m_%H%M%S').bak
+netstat -ntpl | grep :9001
+docker run --restart always -d \
  --name cadvisor \
  --hostname=dp-cadvisor \
  --network=dp-net \
@@ -17,5 +19,7 @@ sudo docker run --restart always -d \
  -v /var/lib/docker/:/var/lib/docker:ro \
  -v /etc/localtime:/etc/localtime:ro \
  google/cadvisor
-docker rm -v -f $(docker ps -aqf "name=cadvisor" --filter status=exited)
-docker rmi $(docker images -f dangling=true -q)
+docker ps -aqf "name=cadvisor" --filter status=exited | xargs -I'{}' docker rm -v -f $(docker ps -aqf "name=cadvisor" --filter status=exited)
+docker images -f dangling=true -q | xargs -I'{}' docker rmi $(docker images -f dangling=true -q)
+
+echo Success

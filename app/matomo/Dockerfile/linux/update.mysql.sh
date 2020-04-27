@@ -7,7 +7,7 @@ docker volume inspect matomo-mysql_data
 docker pull mysql
 docker stop $(docker ps -aqf "name=matomo-mysql")
 docker rename matomo-mysql matomo-mysql.$(date +'%Y%d%m_%H%M%S').bak
-sudo docker run --restart always -d \
+docker run --restart always -d \
  --name matomo-mysql \
  --hostname=dp-matomo-mysql \
  --network=dp-net \
