@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Restart info
+#Docker info
 #./info.sh
 
 docker -v

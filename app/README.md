@@ -19,3 +19,5 @@ Applications
 ## Nginx
 
 ## Portainer
+
+## Swagger

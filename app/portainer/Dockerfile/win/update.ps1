@@ -1,4 +1,8 @@
-﻿#portainer
+﻿#power shell
+
+#portainer
+#.\update.ps1
+#powershell -noexit "& "".\update.ps1"""
 
 docker volume create portainer_data
 docker volume inspect portainer_data
