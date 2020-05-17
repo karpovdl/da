@@ -12,4 +12,4 @@
 #.\update.ps1 {APP_NAME} {VERSION_PREV} {VERSION_NEXT} {APP_PORT} {DATA_DIR}
 # $1\$5 - {APP_NAME}\{DATA_DIR}
 
-powershell -noexit "& "".\update.ps1 swagger-ui v3.25.3 v3.25.3 8004 swagger/json8004"""
+powershell -noexit "& "".\update.ps1 swagger-editor v3.8.3 v3.8.3 8005 swagger/json8004"""
