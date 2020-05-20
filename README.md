@@ -1,7 +1,5 @@
 # da
 
-![][0]
-
-[0]: https://img.shields.io/badge/license-MIT-blue.svg "License"
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?label=License&maxAge=86400)](./LICENSE)
 
 Docker images and applictions
