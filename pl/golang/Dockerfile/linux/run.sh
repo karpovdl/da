@@ -9,3 +9,4 @@
 
 #./builder.sh {DockerID} {VERSION}
 #./builder.sh {DockerID} {VERSION} {VERSION_ALPINE}
+./builder.sh karpovdl 1.14.3 3.11

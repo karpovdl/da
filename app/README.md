@@ -12,6 +12,8 @@ Applications
 
 ## Grafana
 
+## JFrog
+
 ## Matomo
 
 ## Netdata

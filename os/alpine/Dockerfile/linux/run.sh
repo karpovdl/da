@@ -7,3 +7,4 @@
 #$2 - version alpine (mandatory parameter)
 
 #./builder.sh {DockerID} {VERSION}
+./builder.sh karpovdl 3.11.6
