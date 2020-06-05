@@ -3,8 +3,10 @@ docker volume create portainer_data
 docker volume inspect portainer_data
 
 docker pull portainer/portainer:latest
-docker stop $(docker ps -aqf "name=portainer")
-docker rename portainer portainer.$(date +'%Y%d%m_%H%M%S').bak
+docker ps -aqf "name=portainer" | xargs -I'{}' docker stop $(docker ps -aqf "name=portainer")
+docker ps -aqf "name=portainer" | xargs -I'{}' docker network disconnect --force dp-net {}
+docker ps -aqf "name=portainer" | xargs -I'{}' docker rename portainer portainer.$(date +'%Y%d%m_%H%M%S').bak
+netstat -ntpl | grep :$4
 docker run --restart always -d \
  --name portainer \
  --hostname=dp-portainer \
@@ -16,5 +18,7 @@ docker run --restart always -d \
  -v /etc/timezone:/etc/timezone:ro \
  -v /etc/localtime:/etc/localtime:ro \
  portainer/portainer:latest
-docker rm -v -f $(docker ps -aqf "name=portainer" --filter status=exited)
-docker rmi $(docker images -f dangling=true -q)
+docker ps -aqf "name=portainer" --filter status=exited | xargs -I'{}' docker rm -v -f $(docker ps -aqf "name=portainer" --filter status=exited)
+docker images -f dangling=true -q | xargs -I'{}' docker rmi $(docker images -f dangling=true -q)
+
+echo Success
