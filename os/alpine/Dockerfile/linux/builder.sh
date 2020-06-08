@@ -27,18 +27,22 @@ docker exec $uid-alpine sh -c \
 
 docker commit $uid-alpine $uid/alpine
 
-docker login
+if [ ! -z $uid ]; then
+  docker login
 
-docker tag $uid/alpine $uid/alpine:$version
-docker push $uid/alpine:$version
+  docker tag $uid/alpine $uid/alpine:$version
+  docker push $uid/alpine:$version
 
-docker tag $uid/alpine $uid/alpine
-docker push $uid/alpine
+  docker tag $uid/alpine $uid/alpine
+  docker push $uid/alpine
 
-docker stop $uid-alpine
-docker rm -v -f $uid-alpine
-docker rmi $uid/alpine:$version
-docker rmi $uid/alpine:latest
-docker rmi alpine:$version
+  docker stop $uid-alpine
+  docker rm -v -f $uid-alpine
+  docker rmi $uid/alpine:$version
+  docker rmi $uid/alpine:latest
+  docker rmi alpine:$version
 
-docker logout
+  docker logout
+fi
+
+echo Success

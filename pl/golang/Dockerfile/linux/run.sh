@@ -7,6 +7,6 @@
 #$2 - version golang (mandatory parameter)
 #$3 - version alpine (optional parameter)
 
-#./builder.sh {DockerID} {VERSION}
-#./builder.sh {DockerID} {VERSION} {VERSION_ALPINE}
-./builder.sh rolfit 1.14.3 3.11
+#./builder.sh {DOCKER_ID} {VERSION}
+#./builder.sh {DOCKER_ID} {VERSION} {VERSION_ALPINE}
+./builder.sh karpovdl 1.14.4 3.12

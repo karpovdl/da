@@ -44,32 +44,36 @@ if [ ! -z $version_alpine ]; then
   docker commit $uid-golang-alpine $uid/golang:alpine
 fi
 
-docker login
+if [ ! -z $uid ]; then
+  docker login
 
-docker tag $uid/golang $uid/golang:$version
-docker push $uid/golang:$version
+  docker tag $uid/golang $uid/golang:$version
+  docker push $uid/golang:$version
 
-docker tag $uid/golang $uid/golang
-docker push $uid/golang
+  docker tag $uid/golang $uid/golang
+  docker push $uid/golang
 
-docker stop $uid-golang
-docker rm -v -f $uid-golang
-docker rmi $uid/golang:$version
-docker rmi $uid/golang:latest
-docker rmi golang:$version
+  docker stop $uid-golang
+  docker rm -v -f $uid-golang
+  docker rmi $uid/golang:$version
+  docker rmi $uid/golang:latest
+  docker rmi golang:$version
 
-if [ ! -z $version_alpine ]; then
-  docker tag $uid/golang:alpine $uid/golang:$version-alpine$version_alpine
-  docker push $uid/golang:$version-alpine$version_alpine
+  if [ ! -z $version_alpine ]; then
+    docker tag $uid/golang:alpine $uid/golang:$version-alpine$version_alpine
+    docker push $uid/golang:$version-alpine$version_alpine
 
-  docker tag $uid/golang:alpine $uid/golang:alpine
-  docker push $uid/golang:alpine
+    docker tag $uid/golang:alpine $uid/golang:alpine
+    docker push $uid/golang:alpine
 
-  docker stop $uid-golang-alpine
-  docker rm -v -f $uid-golang-alpine
-  docker rmi $uid/golang:$version-alpine$version_alpine
-  docker rmi $uid/golang:alpine
-  docker rmi golang:$version-alpine$version_alpine
+    docker stop $uid-golang-alpine
+    docker rm -v -f $uid-golang-alpine
+    docker rmi $uid/golang:$version-alpine$version_alpine
+    docker rmi $uid/golang:alpine
+    docker rmi golang:$version-alpine$version_alpine
+  fi
+
+  docker logout
 fi
 
-docker logout
+echo Success

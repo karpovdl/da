@@ -23,7 +23,7 @@ $uid        = $args[6]
 echo $appName $appVerPrev $appVerNext $appPort $appDataDir $uid
 
 # App path
-New-Item -ItemType Directory -Force -Path c:/assets/app/${appDataDir}
+New-Item -ItemType Directory -Force -Path ${appDataDir}
 
 # Docker pull and run
 docker pull docker.bintray.io/jfrog/artifactory-oss:${appVerNext}
@@ -36,7 +36,7 @@ docker run --restart always -d `
  -p ${appPort}:8081 `
  -p ${appPortUi}:8082 `
  -e TZ='Europe/Moscow' `
- -v /host_mnt/c/assets/app/${appDataDir}:/var/opt/jfrog/artifactory `
+ -v /host_mnt/${appDataDir}:/var/opt/jfrog/artifactory `
  docker.bintray.io/jfrog/artifactory-oss:${appVerNext}
 @(docker ps -aqf "name=${appName}_${appVerPrev}_${appPort}" --filter status=exited) | %{docker rm -v -f $(docker ps -aqf "name=${appName}_${appVerPrev}_${appPort}" --filter status=exited)}
 @(docker images -f dangling=true -q) | %{docker rmi $(docker images -f dangling=true -q)}

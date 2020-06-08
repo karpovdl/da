@@ -7,10 +7,11 @@
 #$2 - version prev
 #$3 - version next
 #$4 - app port
+#$5 - sub path for data folder
 
 # Config
-mkdir -p /assets/app/$1/$4
-cp ../../conf/config.json /assets/app/$1/$4
+mkdir -p $5
+cp ../../conf/config.json $5
 
 # Log and certs
 mkdir -p /assets/instances/$1/$4/{log,certs}
@@ -28,7 +29,7 @@ docker run --restart always -d \
  --network=dp-net \
  -p $4:8000 \
  -e TZ="Europe/Moscow" \
- -v /assets/app/$1/$4:/centrifugo \
+ -v $5:/centrifugo \
  -v /assets/instances/$1/$4/log:/centrifugo/log \
  -v /assets/instances/$1/$4/certs:/centrifugo/certs \
  --ulimit nofile=65536:65536 \
