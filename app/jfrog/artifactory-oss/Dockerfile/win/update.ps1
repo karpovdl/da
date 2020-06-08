@@ -45,11 +45,11 @@ if (${uid}) {
   # Docker push
   docker login
 
-  docker tag docker.bintray.io/jfrog/artifactory-oss:${appVerNext} ${uid}/jfrog-artifactory-oss:${appVerNext}
-  docker push ${uid}/jfrog-artifactory-oss:${appVerNext}
+  docker tag docker.bintray.io/jfrog/artifactory-oss:${appVerNext} ${uid}/${appName}:${appVerNext}
+  docker push ${uid}/${appName}:${appVerNext}
 
-  docker tag docker.bintray.io/jfrog/artifactory-oss:${appVerNext} ${uid}/jfrog-artifactory-oss
-  docker push ${uid}/jfrog-artifactory-oss
+  docker tag docker.bintray.io/jfrog/artifactory-oss:${appVerNext} ${uid}/${appName}
+  docker push ${uid}/${appName}
 
   docker logout
 }

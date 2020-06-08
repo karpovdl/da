@@ -13,4 +13,4 @@
 
 #.\update.ps1 {APP_NAME} {VERSION_PREV} {VERSION_NEXT} {APP_PORT} {APP_PORT_UI} {DATA_DIR} {DockerID}
 
-powershell -noexit "& "".\update.ps1 jfrog-artifactory-oss 7.4.3 7.4.3 8081 8082 jfrog/artifactory-oss karpovdl"""
+powershell -noexit "& "".\update.ps1 jfrog-artifactory-oss 7.4.3 7.5.5 8081 8082 jfrog/artifactory-oss karpovdl"""
