@@ -12,15 +12,9 @@ if [[ $file != "" ]]; then
   tar -xvf $file
   rm -rf /usr/local/go
   mv go /usr/local
-  export GOROOT=/usr/local/go
-  echo GOROOT = "$GOROOT"
+  echo 'export GOROOT=/usr/local/go
   export GOPATH=$HOME/go
-  echo GOPATH = "$GOPATH"
-  export PATH="$PATH:$GOROOT/bin:$GOPATH"
-  echo PATH = "$PATH"
-
-  go version
-  #go env
+  export PATH="$PATH:$GOROOT/bin:$GOPATH"' >> /etc/profile
 else
   echo None install
 fi
