@@ -9,4 +9,4 @@
 
 #./builder.sh {DOCKER_ID} {VERSION}
 #./builder.sh {DOCKER_ID} {VERSION} {VERSION_ALPINE}
-./builder.sh karpovdl 1.14.4 3.12
+./builder.sh karpovdl 1.14.6 3.12
