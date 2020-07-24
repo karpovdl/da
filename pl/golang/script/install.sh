@@ -3,7 +3,7 @@
 #Install
 #./install.sh
 
-sudo ./install_go.sh go1.14.4.linux-amd64.tar.gz
+sudo ./install_go.sh go1.14.6.linux-amd64.tar.gz
 
 echo GOROOT = "$GOROOT"
 echo GOPATH = "$GOPATH"
