@@ -7,4 +7,4 @@
 #$2 - version alpine (mandatory parameter)
 
 #./builder.sh {DOCKER_ID} {VERSION}
-./builder.sh karpovdl 3.12.0
+./builder.sh karpovdl 3.19.0
